@@ -11,12 +11,19 @@ export const personalInfo = {
   ],
   location: "Vadodara, India",
   email: "arsalanalam184@gmail.com",
+<<<<<<< HEAD
   // ⚠️  Place your resume PDF at public/resume.pdf before deploying
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   resumeUrl: "/resume.pdf",
   availability: "Open to full-time roles",
   social: {
     github: "https://github.com/arsalan-alam006",
+<<<<<<< HEAD
     linkedin: "https://www.linkedin.com/in/arsalan-alam006/",
+=======
+    linkedin: "https://www.linkedin.com/in/arsalan-alam006/"
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   }
 };
 
@@ -52,9 +59,12 @@ export const projects = [
     live: "#",
     featured: true,
     year: "2024",
+<<<<<<< HEAD
     // ⚠️  Add a screenshot: place image at public/projects/ems.png and set:
     // image: "/projects/ems.png",
     image: null,
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   },
   {
     id: 2,
@@ -69,9 +79,12 @@ export const projects = [
     live: "#",
     featured: true,
     year: "2024",
+<<<<<<< HEAD
     // ⚠️  Add a screenshot: place image at public/projects/wanderlust.png and set:
     // image: "/projects/wanderlust.png",
     image: null,
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   },
   {
     id: 3,
@@ -86,9 +99,12 @@ export const projects = [
     live: "#",
     featured: true,
     year: "2025",
+<<<<<<< HEAD
     // ⚠️  Add a screenshot: place image at public/projects/mcp-assistant.png and set:
     // image: "/projects/mcp-assistant.png",
     image: null,
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   },
 ];
 

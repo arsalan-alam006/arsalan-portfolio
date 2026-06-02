@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useRef, useMemo, Suspense } from 'react';
+=======
+import React, { useRef, useMemo } from 'react';
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
@@ -24,6 +28,10 @@ function FloatingGem() {
 
   return (
     <group>
+<<<<<<< HEAD
+=======
+      {/* Glowing solid core */}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[1.1, 1]} />
         <meshStandardMaterial
@@ -35,6 +43,10 @@ function FloatingGem() {
           wireframe={false}
         />
       </mesh>
+<<<<<<< HEAD
+=======
+      {/* Wireframe shell */}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
       <lineSegments ref={edgesRef}>
         <edgesGeometry args={[new THREE.IcosahedronGeometry(1.15, 1)]} />
         <lineBasicMaterial color="#4f8aff" transparent opacity={0.55} />
@@ -43,6 +55,10 @@ function FloatingGem() {
   );
 }
 
+<<<<<<< HEAD
+=======
+/* Small orbiting spheres */
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 function OrbitRing({ radius, speed, color, size = 0.06 }) {
   const ref = useRef();
   useFrame(({ clock }) => {
@@ -55,15 +71,25 @@ function OrbitRing({ radius, speed, color, size = 0.06 }) {
   });
   return (
     <mesh ref={ref}>
+<<<<<<< HEAD
       <sphereGeometry args={[size, 10, 10]} />
+=======
+      <sphereGeometry args={[size, 12, 12]} />
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
       <meshStandardMaterial color={color} emissive={color} emissiveIntensity={1.5} />
     </mesh>
   );
 }
 
+<<<<<<< HEAD
 /* Reduced star count for performance */
 function Stars() {
   const count = 900; // was 1800 — cut in half for mobile perf
+=======
+/* Starfield particles */
+function Stars() {
+  const count = 1800;
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count * 3; i++) arr[i] = (Math.random() - 0.5) * 30;
@@ -82,6 +108,10 @@ function Stars() {
   );
 }
 
+<<<<<<< HEAD
+=======
+/* Ring torus */
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 function Ring() {
   const ref = useRef();
   useFrame(({ clock }) => {
@@ -93,7 +123,11 @@ function Ring() {
   });
   return (
     <mesh ref={ref}>
+<<<<<<< HEAD
       <torusGeometry args={[1.9, 0.008, 8, 80]} />
+=======
+      <torusGeometry args={[1.9, 0.008, 8, 100]} />
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
       <meshBasicMaterial color="#4f8aff" transparent opacity={0.3} />
     </mesh>
   );
@@ -104,6 +138,7 @@ export default function Scene3D({ style }) {
     <Canvas
       style={{ ...style, background: 'transparent' }}
       camera={{ position: [0, 0, 5], fov: 50 }}
+<<<<<<< HEAD
       dpr={[1, 1.2]}  /* was [1,1.5] — lower max DPR = less GPU load */
       gl={{ antialias: false, alpha: true, powerPreference: 'low-power' }}
       frameloop="always"
@@ -119,6 +154,21 @@ export default function Scene3D({ style }) {
         <OrbitRing radius={2.6} speed={0.32} color="#a259ff" size={0.04} />
         <OrbitRing radius={1.8} speed={0.8}  color="#00c896" size={0.035} />
       </Suspense>
+=======
+      dpr={[1, 1.5]}
+      gl={{ antialias: true, alpha: true }}
+    >
+      <ambientLight intensity={0.4} />
+      <pointLight position={[5, 5, 5]} intensity={1.2} color="#4f8aff" />
+      <pointLight position={[-5, -3, -5]} intensity={0.6} color="#a259ff" />
+
+      <Stars />
+      <FloatingGem />
+      <Ring />
+      <OrbitRing radius={2.2} speed={0.5}  color="#4f8aff" size={0.05} />
+      <OrbitRing radius={2.6} speed={0.32} color="#a259ff" size={0.04} />
+      <OrbitRing radius={1.8} speed={0.8}  color="#00c896" size={0.035} />
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
     </Canvas>
   );
 }

@@ -1,10 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+<<<<<<< HEAD
 import { personalInfo } from '../data';
 
 export default function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+=======
+import { personalInfo, stats } from '../data';
+
+export default function About() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 
   const v = {
     hidden: { opacity: 0, y: 30 },
@@ -13,7 +20,11 @@ export default function About() {
 
   return (
     <section id="about" className="section" ref={ref}>
+<<<<<<< HEAD
       <div className="about-grid">
+=======
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 
         {/* Left — visual */}
         <motion.div
@@ -31,7 +42,10 @@ export default function About() {
             border: '1px solid var(--border)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             position: 'relative', overflow: 'hidden',
+<<<<<<< HEAD
             margin: '0 auto',
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
           }}>
             {/* Decorative grid */}
             <div style={{
@@ -64,8 +78,13 @@ export default function About() {
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Floating card — hidden on small mobile to avoid overflow */}
           <div className="about-float-card" style={{
+=======
+          {/* Floating card */}
+          <div style={{
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
             position: 'absolute', top: -20, right: -20,
             background: 'rgba(12,18,35,0.9)', backdropFilter: 'blur(12px)',
             border: '1px solid var(--border)',
@@ -93,7 +112,11 @@ export default function About() {
             </motion.p>
           ))}
 
+<<<<<<< HEAD
           {/* Details grid */}
+=======
+          {/* Details */}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
           <motion.div custom={3} variants={v} initial="hidden" animate={inView ? "show" : "hidden"}
             style={{
               display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem',
@@ -109,7 +132,11 @@ export default function About() {
             ].map(([label, value]) => (
               <div key={label}>
                 <div style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.2rem' }}>{label}</div>
+<<<<<<< HEAD
                 <div style={{ fontSize: '0.88rem', color: 'var(--text-2)', wordBreak: 'break-all' }}>{value}</div>
+=======
+                <div style={{ fontSize: '0.88rem', color: 'var(--text-2)' }}>{value}</div>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
               </div>
             ))}
           </motion.div>
@@ -122,6 +149,7 @@ export default function About() {
         </div>
       </div>
 
+<<<<<<< HEAD
       <style>{`
         .about-grid {
           display: grid;
@@ -139,6 +167,9 @@ export default function About() {
           }
         }
       `}</style>
+=======
+      <style>{`@media(max-width:900px){ #about .section > div { grid-template-columns:1fr !important; } }`}</style>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
     </section>
   );
 }

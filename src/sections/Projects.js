@@ -21,6 +21,7 @@ function ProjectCard({ project, index }) {
     if (!card) return;
     card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateZ(0)';
     card.style.boxShadow = 'none';
+<<<<<<< HEAD
     card.style.borderColor = 'var(--border)';
   };
 
@@ -28,6 +29,8 @@ function ProjectCard({ project, index }) {
     const card = cardRef.current;
     if (!card) return;
     card.style.borderColor = project.color + '55';
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   };
 
   return (
@@ -35,11 +38,18 @@ function ProjectCard({ project, index }) {
       ref={cardRef}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: index * 0.12 }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
+=======
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: index * 0.12 }}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
       style={{
         background: 'rgba(12,18,35,0.8)', backdropFilter: 'blur(20px)',
         border: '1px solid var(--border)',
@@ -48,6 +58,7 @@ function ProjectCard({ project, index }) {
         cursor: 'default',
         willChange: 'transform',
       }}
+<<<<<<< HEAD
     >
       {/* Top visual — real image if provided, gradient fallback */}
       <div style={{
@@ -106,19 +117,65 @@ function ProjectCard({ project, index }) {
           )}
         </div>
 
+=======
+      onMouseEnter={e => e.currentTarget.style.borderColor = project.color + '55'}
+      onMouseLeave2={e => e.currentTarget.style.borderColor = 'var(--border)'}
+    >
+      {/* Top visual strip */}
+      <div style={{
+        height: 200,
+        background: `linear-gradient(135deg, ${project.colorDark}, ${project.color}33)`,
+        position: 'relative', overflow: 'hidden',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        {/* Grid pattern */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: `linear-gradient(${project.color}18 1px, transparent 1px), linear-gradient(90deg, ${project.color}18 1px, transparent 1px)`,
+          backgroundSize: '30px 30px',
+        }} />
+        {/* Big number */}
+        <span style={{
+          fontFamily: 'var(--serif)', fontSize: '7rem', fontWeight: 700,
+          color: project.color + '15', lineHeight: 1, zIndex: 1, userSelect: 'none',
+          position: 'absolute', right: '5%', bottom: '-10%',
+        }}>
+          {String(project.id).padStart(2, '0')}
+        </span>
+        {/* Title large */}
+        <div style={{ zIndex: 2, textAlign: 'center', padding: '0 2rem' }}>
+          <div style={{
+            fontFamily: 'var(--serif)', fontSize: '2rem', fontWeight: 700,
+            color: '#fff', fontStyle: 'italic',
+          }}>{project.title}</div>
+          <div style={{
+            fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: project.color, marginTop: '0.4rem',
+          }}>{project.category}</div>
+        </div>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         {/* Year badge */}
         <div style={{
           position: 'absolute', top: 14, right: 14,
           padding: '0.25rem 0.7rem', borderRadius: '4px',
+<<<<<<< HEAD
           background: 'rgba(0,0,0,0.5)', border: `1px solid ${project.color}44`,
           fontSize: '0.7rem', color: project.color, letterSpacing: '0.1em', zIndex: 3,
+=======
+          background: 'rgba(0,0,0,0.4)', border: `1px solid ${project.color}44`,
+          fontSize: '0.7rem', color: project.color, letterSpacing: '0.1em',
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         }}>
           {project.year}
         </div>
       </div>
 
       {/* Content */}
+<<<<<<< HEAD
       <div style={{ padding: 'clamp(1rem, 3vw, 1.6rem)' }}>
+=======
+      <div style={{ padding: '1.6rem' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', color: 'var(--text-1)', marginBottom: '0.6rem', fontWeight: 700 }}>
           {project.fullTitle}
         </h3>
@@ -140,9 +197,15 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Links */}
+<<<<<<< HEAD
         <div style={{ display: 'flex', gap: '0.8rem', borderTop: '1px solid var(--border)', paddingTop: '1.2rem', flexWrap: 'wrap' }}>
           <a href={project.github} target="_blank" rel="noopener noreferrer"
             style={{ fontSize: '0.78rem', color: 'var(--text-2)', letterSpacing: '0.08em', transition: 'color 0.3s', cursor: 'pointer' }}
+=======
+        <div style={{ display: 'flex', gap: '0.8rem', borderTop: '1px solid var(--border)', paddingTop: '1.2rem' }}>
+          <a href={project.github} target="_blank" rel="noopener noreferrer"
+            style={{ fontSize: '0.78rem', color: 'var(--text-2)', letterSpacing: '0.08em', transition: 'color 0.3s' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
             onMouseEnter={e => e.target.style.color = project.color}
             onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
           >
@@ -150,7 +213,11 @@ function ProjectCard({ project, index }) {
           </a>
           {project.live && project.live !== '#' && (
             <a href={project.live} target="_blank" rel="noopener noreferrer"
+<<<<<<< HEAD
               style={{ fontSize: '0.78rem', color: 'var(--text-2)', letterSpacing: '0.08em', transition: 'color 0.3s', cursor: 'pointer' }}
+=======
+              style={{ fontSize: '0.78rem', color: 'var(--text-2)', letterSpacing: '0.08em', transition: 'color 0.3s' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
               onMouseEnter={e => e.target.style.color = project.color}
               onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
             >
@@ -178,7 +245,11 @@ export default function Projects() {
         </p>
       </motion.div>
 
+<<<<<<< HEAD
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))', gap:'1.5rem' }}>
+=======
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(340px, 1fr))', gap:'1.5rem' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         {projects.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
       </div>
     </section>

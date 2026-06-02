@@ -4,6 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { skills } from '../data';
 
 const CATS = ['All', ...Array.from(new Set(skills.map(s => s.category)))];
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 const ACCENT = { Frontend: '#4f8aff', Backend: '#00c896', Tools: '#f5a623', AI: '#a259ff' };
 
 export default function Skills() {
@@ -29,7 +33,11 @@ export default function Skills() {
             style={{
               padding:'0.45rem 1.1rem', borderRadius:'30px',
               fontSize:'0.75rem', letterSpacing:'0.1em', textTransform:'uppercase',
+<<<<<<< HEAD
               fontWeight:500, cursor:'pointer', transition:'all 0.25s',
+=======
+              fontWeight:500, cursor:'none', transition:'all 0.25s',
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
               background: active===cat ? 'var(--accent)' : 'transparent',
               color: active===cat ? '#fff' : 'var(--text-3)',
               border: active===cat ? '1px solid transparent' : '1px solid var(--border)',
@@ -40,7 +48,11 @@ export default function Skills() {
       </div>
 
       {/* Skills grid */}
+<<<<<<< HEAD
       <motion.div layout style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px,1fr))', gap:'1rem' }}>
+=======
+      <motion.div layout style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px,1fr))', gap:'1rem' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         <AnimatePresence mode="popLayout">
           {filtered.map((skill, i) => (
             <motion.div key={skill.name}
@@ -64,6 +76,10 @@ export default function Skills() {
                 </span>
               </div>
 
+<<<<<<< HEAD
+=======
+              {/* Bar */}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
               <div style={{ height:2, background:'rgba(255,255,255,0.06)', borderRadius:2, overflow:'hidden' }}>
                 <motion.div
                   initial={{ width:0 }}

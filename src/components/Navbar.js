@@ -14,12 +14,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', fn);
   }, []);
 
+<<<<<<< HEAD
   // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
@@ -31,7 +34,11 @@ export default function Navbar() {
       transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
     }}>
       {/* Logo */}
+<<<<<<< HEAD
       <Link to="hero" smooth duration={600} style={{ cursor: 'pointer' }}>
+=======
+      <Link to="hero" smooth duration={600} style={{ cursor: 'none' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         <span style={{ fontFamily: 'var(--serif)', fontSize: '1.3rem', color: 'var(--text-1)', fontStyle: 'italic' }}>
           {personalInfo.firstName}<span style={{ color: 'var(--accent)', fontStyle: 'normal', fontWeight: 700 }}> {personalInfo.lastName}</span>
         </span>
@@ -43,7 +50,11 @@ export default function Navbar() {
           <li key={id}>
             <Link
               to={id} smooth duration={600} offset={-80} spy
+<<<<<<< HEAD
               style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-2)', cursor: 'pointer', transition: 'color 0.3s' }}
+=======
+              style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-2)', cursor: 'none', transition: 'color 0.3s' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
               activeStyle={{ color: 'var(--accent)' }}
               onMouseEnter={e => e.target.style.color = 'var(--text-1)'}
               onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
@@ -54,14 +65,20 @@ export default function Navbar() {
         ))}
       </ul>
 
+<<<<<<< HEAD
       {/* CTA — hidden on mobile to save space */}
       <a href={`mailto:${personalInfo.email}`} className="btn btn-primary nav-cta" style={{ fontSize: '0.78rem', padding: '0.6rem 1.4rem' }}>
+=======
+      {/* CTA */}
+      <a href={`mailto:${personalInfo.email}`} className="btn btn-primary" style={{ fontSize: '0.78rem', padding: '0.6rem 1.4rem' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         Hire Me
       </a>
 
       {/* Mobile burger */}
       <button
         onClick={() => setOpen(!open)}
+<<<<<<< HEAD
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
         style={{
@@ -69,6 +86,10 @@ export default function Navbar() {
           padding: '8px', cursor: 'pointer',
           background: 'transparent', border: 'none',
         }}
+=======
+        aria-label="Menu"
+        style={{ display: 'none', flexDirection: 'column', gap: '5px', padding: '4px', cursor: 'none' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         className="nav-burger"
       >
         {[0,1,2].map(i => (
@@ -92,6 +113,7 @@ export default function Navbar() {
           position: 'fixed', inset: 0, background: 'rgba(5,8,16,0.97)',
           zIndex: 999, display: 'flex', flexDirection: 'column',
           alignItems: 'center', justifyContent: 'center', gap: '3rem',
+<<<<<<< HEAD
         }}
           onClick={() => setOpen(false)}
         >
@@ -101,13 +123,23 @@ export default function Navbar() {
               style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--text-2)', cursor: 'pointer', transition: 'color 0.3s' }}
               onMouseEnter={e => e.target.style.color = 'var(--text-1)'}
               onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
+=======
+        }}>
+          {NAV.map(id => (
+            <Link key={id} to={id} smooth duration={600} offset={-80}
+              onClick={() => setOpen(false)}
+              style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--text-2)', cursor: 'none' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
             >
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </Link>
           ))}
+<<<<<<< HEAD
           <a href={`mailto:${personalInfo.email}`} className="btn btn-primary" style={{ marginTop: '1rem' }}>
             Hire Me
           </a>
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         </div>
       )}
 
@@ -115,8 +147,11 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-burger { display: flex !important; }
+<<<<<<< HEAD
           .nav-cta { display: none !important; }
           nav { padding-left: 5% !important; padding-right: 5% !important; }
+=======
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
         }
       `}</style>
     </nav>

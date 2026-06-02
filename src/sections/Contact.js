@@ -4,7 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import { personalInfo } from '../data';
 
 export default function Contact() {
+<<<<<<< HEAD
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
+=======
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
   const [form, setForm] = useState({ name:'', email:'', message:'' });
   const [status, setStatus] = useState(null);
 
@@ -33,7 +37,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section" ref={ref}>
+<<<<<<< HEAD
       <div className="contact-grid">
+=======
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1.1fr', gap:'6rem', alignItems:'start' }}>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
 
         {/* Left */}
         <div>
@@ -65,10 +73,17 @@ export default function Contact() {
               }}>
                 {label === 'Email' ? '✉' : '📍'}
               </div>
+<<<<<<< HEAD
               <div style={{ minWidth: 0 }}>
                 <div style={{ fontSize:'0.68rem', letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--text-3)', marginBottom:'0.1rem' }}>{label}</div>
                 {href
                   ? <a href={href} style={{ fontSize:'0.92rem', color:'var(--text-2)', transition:'color 0.3s', wordBreak:'break-all' }}
+=======
+              <div>
+                <div style={{ fontSize:'0.68rem', letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--text-3)', marginBottom:'0.1rem' }}>{label}</div>
+                {href
+                  ? <a href={href} style={{ fontSize:'0.92rem', color:'var(--text-2)', transition:'color 0.3s' }}
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
                       onMouseEnter={e=>e.target.style.color='var(--accent)'}
                       onMouseLeave={e=>e.target.style.color='var(--text-2)'}
                     >{value}</a>
@@ -108,7 +123,11 @@ export default function Contact() {
             <form onSubmit={handleSubmit} noValidate style={{
               background:'rgba(12,18,35,0.7)', backdropFilter:'blur(20px)',
               border:'1px solid var(--border)', borderRadius:'16px',
+<<<<<<< HEAD
               padding:'clamp(1.5rem, 4vw, 2.5rem)',
+=======
+              padding:'2.5rem',
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
             }}>
               {[
                 { id:'name',    label:'Name',    type:'text',  ph:'Your full name' },
@@ -143,6 +162,7 @@ export default function Contact() {
         </motion.div>
       </div>
 
+<<<<<<< HEAD
       <style>{`
         .contact-grid {
           display: grid;
@@ -157,6 +177,9 @@ export default function Contact() {
           }
         }
       `}</style>
+=======
+      <style>{`@media(max-width:900px){ #contact > .section > div { grid-template-columns:1fr !important; } }`}</style>
+>>>>>>> d5408dbe1f0fd20a071e58a9467f39c6c7a51472
     </section>
   );
 }
