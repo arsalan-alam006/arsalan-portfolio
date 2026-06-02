@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: arsalan-portfolio
+    runtime: static
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: "18"

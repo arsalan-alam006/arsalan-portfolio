@@ -1,0 +1,7 @@
+📄 Resume / CV Setup
+====================
+1. Export your resume as a PDF
+2. Rename it to: resume.pdf
+3. Place it in this /public folder (same location as this file)
+
+The "Download CV" button in the About section links to /resume.pdf
